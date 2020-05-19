@@ -9,6 +9,7 @@ node('slave'){
                             sh "mvn -s ${MySettings} clean install"
                          }
                         sh 'find /root/.m2 -maxdepth 3 -type d'
+                        sh 'du -sh /root/.m2'
                     }    
                 }
             }
