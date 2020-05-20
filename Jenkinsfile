@@ -8,7 +8,7 @@ node('slave'){
                         withEnv(['jobname=loansapp']) {
                             sh "mvn -s ${MySettings} clean install"
                          }
-                        build job: 'testmultibranchpipeline/dev', propagate: false
+                        build job: 'testmultibranchpipeline/dev', propagate: false, wait: false
                         sh 'find /root/.m2 -maxdepth 3 -type d'
                         sh 'du -sh /root/.m2'
                     }    
